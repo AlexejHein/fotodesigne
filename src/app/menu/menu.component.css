@@ -1,0 +1,21 @@
+nav{
+  height: 100px;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+a{
+  font-family: "Roboto Light", sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  padding: 10px 20px;
+}
