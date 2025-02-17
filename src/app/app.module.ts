@@ -12,6 +12,7 @@ import { WabenComponent } from './waben/waben.component';
 import {NgOptimizedImage} from "@angular/common";
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DatenschutzComponent } from './datenschutz/datenschutz.component';
     FooterComponent,
     WabenComponent,
     ImpressumComponent,
-    DatenschutzComponent
+    DatenschutzComponent,
+    AboutComponent
   ],
     imports: [
         BrowserModule,

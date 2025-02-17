@@ -5,6 +5,7 @@ import { ContactComponent} from './contact/contact.component';
 import { GalleryComponent} from './gallery/gallery.component';
 import {ImpressumComponent} from './impressum/impressum.component';
 import {DatenschutzComponent} from './datenschutz/datenschutz.component';
+import {AboutComponent} from './about/about.component';
 
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'datenschutz', component: DatenschutzComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({
