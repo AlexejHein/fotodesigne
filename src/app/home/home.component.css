@@ -42,5 +42,7 @@ button{
   transition: all 0.3s ease;
 }
 .projects{
-  background-image: url("../../assets/img/2.jpg");
+  background-image: url("../../assets/img/A7R02209 Kopie.jpg");
+  background-size: cover;
+  background-position: center;
 }
