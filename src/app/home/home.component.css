@@ -41,3 +41,6 @@ button{
   cursor: pointer;
   transition: all 0.3s ease;
 }
+.projects{
+  background-image: url("../../assets/img/2.jpg");
+}
