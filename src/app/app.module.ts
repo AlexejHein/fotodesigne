@@ -13,26 +13,34 @@ import {NgOptimizedImage} from "@angular/common";
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 import { AboutComponent } from './about/about.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ImageDialogComponent } from './image-dialog/image-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ContactComponent,
-    GalleryComponent,
     HomeComponent,
     FooterComponent,
     WabenComponent,
     ImpressumComponent,
     DatenschutzComponent,
-    AboutComponent
+    AboutComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        MatDialogModule,
+        ImageDialogComponent,
+        GalleryComponent,
     ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

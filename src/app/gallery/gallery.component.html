@@ -1,31 +1,9 @@
 <div class="gallery">
-  <div class="gallery-item">
-    <img src="/assets/img/1.jpg" alt="Bild 1">
+  <div
+    class="gallery-item"
+    *ngFor="let image of images"
+    (click)="openDialog(image)"
+  >
+    <img [src]="image" alt="Galeriebild">
   </div>
-  <div class="gallery-item">
-    <img src="/assets/img/2.jpg" alt="Bild 2">
-  </div>
-  <div class="gallery-item">
-    <img src="/assets/img/A7R02159.jpg" alt="Bild 3">
-  </div>
-  <div class="gallery-item">
-    <img src="/assets/img/A7R02159.jpg" alt="Bild 4">
-  </div>
-  <div class="gallery-item">
-    <img src="/assets/img/A7R02209.jpg" alt="Bild 5">
-  </div>
-  <div class="gallery-item">
-    <img src="/assets/img/A7R02209.jpg" alt="Bild 5">
-  </div>
-  <div class="gallery-item">
-    <img src="/assets/img/A7R02209.jpg" alt="Bild 5">
-  </div>
-  <div class="gallery-item">
-    <img src="/assets/img/A7R02209.jpg" alt="Bild 5">
-  </div>
-  <div class="gallery-item">
-    <img src="/assets/img/A7R02209.jpg" alt="Bild 5">
-  </div>
-  <!-- Weitere Items -->
 </div>
-
