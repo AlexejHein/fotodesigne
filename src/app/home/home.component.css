@@ -16,8 +16,8 @@
   background-image: url("../../assets/img/5.jpg");
   background-size: cover;
   background-position: center;
-  padding: 20px; /* Optional, um etwas Abstand und Styling zu erhalten */
-  background-color: #fff; /* Beispielhintergrund */
+  padding: 20px;
+  background-color: #fff;
   color: #333;
 }
 
@@ -41,8 +41,16 @@ button{
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.projects{
+.contact{
   background-image: url("../../assets/img/A7R02209 Kopie.jpg");
   background-size: cover;
   background-position: center;
+}
+.contact h2 {
+  flex: 0 0 30%;
+  margin-left: 20px;
+}
+
+.contact app-contact {
+  flex: 0 0 70%;
 }
