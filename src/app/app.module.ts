@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { WabenComponent } from './waben/waben.component';
 import {NgOptimizedImage} from "@angular/common";
+import { ImpressumComponent } from './impressum/impressum.component';
+import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {NgOptimizedImage} from "@angular/common";
     GalleryComponent,
     HomeComponent,
     FooterComponent,
-    WabenComponent
+    WabenComponent,
+    ImpressumComponent,
+    DatenschutzComponent
   ],
     imports: [
         BrowserModule,
