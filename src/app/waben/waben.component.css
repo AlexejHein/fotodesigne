@@ -54,12 +54,14 @@ html, body {
 }
 
 .wabe button {
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
+  font-family: "Roboto Light", sans-serif;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid white;
   padding: 10px 20px;
-  color: #fff;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .wabe button:hover {

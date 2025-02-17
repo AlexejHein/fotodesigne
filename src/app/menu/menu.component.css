@@ -1,8 +1,9 @@
-nav{
+nav {
   position: absolute;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100px;
-  margin: 0 auto;
   width: 80%;
   display: flex;
   justify-content: space-between;
