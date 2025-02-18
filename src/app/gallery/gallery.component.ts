@@ -17,7 +17,7 @@ export class GalleryComponent {
   // Wir definieren die Kategorien mit zugehörigen Bildern.
   // (Statische Pfade – später ersetzt du diese durch dynamische Daten aus deinem Backend.)
   categories = [
-    { name: 'Mosel', images: ['/assets/img/A7R02265 Kopie.jpg', '/assets/img/2.jpg'] },
+    { name: 'Mosel', images: ['/assets/img/A7R02265 Kopie.jpg', '/assets/img/2.jpg', '/assets/img/A7R02348 Kopie.jpg'] },
     { name: 'Eifel', images: ['/assets/img/A7R02159 Kopie.jpg', '/assets/img/2.jpg'] },
     { name: 'Hunsrück', images: ['/assets/img/1.jpg', '/assets/img/2.jpg'] },
     { name: 'Deutschland', images: ['/assets/img/A7R02277-Verbessert-RR Kopie.jpg', '/assets/img/2.jpg'] },
