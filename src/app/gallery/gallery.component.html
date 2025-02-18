@@ -1,9 +1,9 @@
-<div class="gallery">
-  <div
-    class="gallery-item"
-    *ngFor="let image of images"
-    (click)="openDialog(image)"
-  >
-    <img [src]="image" alt="Galeriebild">
-  </div>
-</div>
+<mat-tab-group [(selectedIndex)]="selectedTabIndex" mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+  <mat-tab *ngFor="let category of categories" [label]="category.name">
+    <div class="gallery">
+      <div class="gallery-item" *ngFor="let image of category.images" (click)="openDialog(image)">
+        <img [src]="image" alt="{{ category.name }} Bild">
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
