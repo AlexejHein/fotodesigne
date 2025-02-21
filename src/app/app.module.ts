@@ -16,6 +16,7 @@ import { AboutComponent } from './about/about.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ImageDialogComponent } from './image-dialog/image-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatDialogModule,
         ImageDialogComponent,
         GalleryComponent,
+        HttpClientModule,
     ],
   providers: [
     provideAnimationsAsync()

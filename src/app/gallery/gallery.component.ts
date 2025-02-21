@@ -1,45 +1,71 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { MatTabGroup, MatTab } from '@angular/material/tabs';
 import { NgForOf } from '@angular/common';
-import {ImageDialogComponent} from '../image-dialog/image-dialog.component';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
+import { GalleryService, GalleryImage } from '../services/gallery.service.service';
+
+interface CategoryGroup {
+  name: string;
+  images: GalleryImage[];
+}
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule, MatTabGroup, MatTab, NgForOf],
+  imports: [MatTabGroup, MatTab, NgForOf],
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent {
-  // Wir definieren die Kategorien mit zugehörigen Bildern.
-  // (Statische Pfade – später ersetzt du diese durch dynamische Daten aus deinem Backend.)
-  categories = [
-    { name: 'Mosel', images: ['/assets/img/A7R02265 Kopie.jpg', '/assets/img/2.jpg', '/assets/img/A7R02348 Kopie.jpg'] },
-    { name: 'Eifel', images: ['/assets/img/A7R02159 Kopie.jpg', '/assets/img/2.jpg'] },
-    { name: 'Hunsrück', images: ['/assets/img/1.jpg', '/assets/img/2.jpg'] },
-    { name: 'Deutschland', images: ['/assets/img/A7R02277-Verbessert-RR Kopie.jpg', '/assets/img/2.jpg'] },
-    { name: 'Architektur', images: ['/assets/img/A7R02136-Verbessert-RR Kopie.jpg', '/assets/img/2.jpg'] }
-  ];
-
+export class GalleryComponent implements OnInit {
+  // Wir gruppieren die Bilder nach Kategorien
+  categories: CategoryGroup[] = [];
   selectedTabIndex = 0;
 
-  constructor(private route: ActivatedRoute, private dialog: MatDialog) {
-    // Lies den Kategorienamen aus dem Query-Parameter und suche den entsprechenden Tab.
+  constructor(
+    private route: ActivatedRoute,
+    private dialog: MatDialog,
+    private galleryService: GalleryService
+  ) {}
+
+  ngOnInit(): void {
+    // Lies den optionalen Query-Parameter "category" (z. B. aus der URL ?category=Mosel)
     const categoryParam = this.route.snapshot.queryParamMap.get('category');
-    if (categoryParam) {
-      const index = this.categories.findIndex(c =>
-        c.name.toLowerCase() === categoryParam.toLowerCase());
-      if (index >= 0) {
-        this.selectedTabIndex = index;
-      }
-    }
+
+    // Lade die Bilder vom Backend
+    this.galleryService.getImages().subscribe({
+      next: (images: GalleryImage[]) => {
+        this.categories = this.groupImagesByCategory(images);
+        if (categoryParam) {
+          const index = this.categories.findIndex(c =>
+            c.name.toLowerCase() === categoryParam.toLowerCase()
+          );
+          if (index >= 0) {
+            this.selectedTabIndex = index;
+          }
+        }
+      },
+      error: (err) => console.error(err)
+    });
   }
+
+  groupImagesByCategory(images: GalleryImage[]): CategoryGroup[] {
+    const groups: { [key: string]: GalleryImage[] } = {};
+    images.forEach(img => {
+      const cat = img.category;
+      if (!groups[cat]) {
+        groups[cat] = [];
+      }
+      groups[cat].push(img);
+    });
+    // Konvertiere das Objekt in ein Array von CategoryGroup
+    return Object.keys(groups).map(key => ({ name: key, images: groups[key] }));
+  }
+
   openDialog(imageSrc: string): void {
     this.dialog.open(ImageDialogComponent, {
-      data: {imageSrc},
+      data: { imageSrc },
       panelClass: 'custom-dialog-container'
     });
   }
