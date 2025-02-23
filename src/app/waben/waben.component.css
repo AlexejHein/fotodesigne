@@ -22,11 +22,29 @@ html, body {
   gap: 0;
 }
 
+@media(max-width: 1000px) {
+  .top-row {
+    flex-wrap: wrap;
+  }
+}
+
 .bottom-row {
   display: flex;
   justify-content: center;
   gap: 0;
   margin-top: -70px;
+}
+
+@media(max-width: 1000px) {
+  .bottom-row {
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 669px) {
+  .bottom-row {
+    margin-top: 10px;
+  }
 }
 
 .wabe {
@@ -46,6 +64,13 @@ html, body {
   color: #fff;
   text-align: center;
   padding: 5px;
+}
+
+@media (max-width: 1000px) {
+  .wabe {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .wabe h2 {

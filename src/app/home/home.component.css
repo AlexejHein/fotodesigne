@@ -10,6 +10,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 1000px) {
+  .content {
+    flex-direction: column;
+  }
+}
+
 /* Schiebe den nächsten Container um die Höhe von .content nach unten */
 .conteiner {
   height: 100vh;
