@@ -17,6 +17,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ImageDialogComponent } from './image-dialog/image-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import {MatIconButton} from '@angular/material/button';
+import {MatIcon} from '@angular/material/icon';
+import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,11 @@ import { HttpClientModule } from '@angular/common/http';
     ImageDialogComponent,
     GalleryComponent,
     HttpClientModule,
+    MatIconButton,
+    MatIcon,
+    MatMenu,
+    MatMenuItem,
+    MatMenuTrigger,
   ],
   providers: [
     provideAnimationsAsync()

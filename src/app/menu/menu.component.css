@@ -25,3 +25,14 @@ a{
 img {
   width: 80px;
 }
+.mobile-nav{
+  display: none;
+}
+@media(max-width: 900px){
+  .desktop-nav{
+    display: none;
+  }
+  .mobile-nav{
+    display: block;
+  }
+}
