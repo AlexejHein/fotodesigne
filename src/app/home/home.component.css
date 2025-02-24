@@ -16,10 +16,9 @@
   }
 }
 
-/* Schiebe den nächsten Container um die Höhe von .content nach unten */
 .conteiner {
   height: 100vh;
-  background-image: url("../../assets/img/5.jpg");
+  background-image: url("../../assets/img/backco2.jpg");
   background-size: cover;
   background-position: center;
   padding: 20px;
@@ -32,11 +31,13 @@
 }
 
 h2 {
+  padding: 20px;
   font-size: 3rem;
   font-weight: 100;
   color: #ffffff;
 }
 p{
+  padding: 20px;
   font-size: 1.5rem;
   color: #ffffff;
   font-weight: 100;
